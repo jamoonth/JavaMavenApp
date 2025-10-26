@@ -1,15 +1,16 @@
 pipeline {
     agent any
 
-    stages {
         stage('Checkout') {
             steps {
                 git(
+                    branch: 'main',
                     url: 'https://github.com/jamoonth/JavaMavenApp.git',
                     credentialsId: 'github'
                 )
             }
         }
+
 
         stage('Build') {
             steps {
